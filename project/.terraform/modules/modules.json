@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"load_balancer","Source":"registry.terraform.io/GoogleCloudPlatform/lb/google","Version":"2.0.0","Dir":".terraform/modules/load_balancer"}]}
