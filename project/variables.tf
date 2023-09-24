@@ -1,10 +1,8 @@
 variable "region" {}
 
-variable "network" {}
-
 variable "zone" {}
 
-variable "db_instance_name" {}
+variable "instance_name" {}
 
 variable "database_version" {}
 
@@ -18,7 +16,7 @@ variable "project_name" {}
 
 variable "user_password" {}
 
-variable "sql_username" {}
+variable "username" {}
 
 variable "host" {}
 
@@ -26,26 +24,16 @@ variable "lb_name" {}
 
 variable "firewall" {}
 
-variable "targetpool_name" {}
+variable "target_pool_name" {}
 
 variable "asg_name" {}
 
-variable "min_replicas" {}
-
-variable "max_replicas" {}
-
-variable "cooldown_period" {}
-
-variable "cpu_target" {}
-
-variable "instance_group_manager" {}
+variable "instance_manager" {}
 
 variable "template_name" {}
 
+variable "template_machine_type" {}
+
 variable "db_password" {}
 
-variable "vm_name" {}
-
-variable "type" {}
-
-variable "disk_name" {}
+#variable "network" {}

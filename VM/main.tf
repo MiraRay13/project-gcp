@@ -1,5 +1,5 @@
 resource "google_compute_instance" "vm_instance" {
-	name = var.vm_name
+	name = "vm_name"
     zone  = var.zone
 	machine_type = "f1-micro"
 	boot_disk {
@@ -20,14 +20,14 @@ resource "google_compute_instance" "vm_instance" {
 }
 
 
-resource "google_compute_disk" "disk" {
-  name  = var.disk_name
-  type  = var.type
-  zone  = var.zone
-  physical_block_size_bytes = 4096
-}
+#resource "google_compute_disk" "disk" {
+ # name  = var.disk_name
+ # type  = var.type
+ # zone  = var.zone
+ ## physical_block_size_bytes = 4096
+#}
 
-resource "google_compute_attached_disk" "default" {
-	disk = google_compute_disk.disk.self_link
-	instance = google_compute_instance.vm_instance.self_link
-}
+#resource "google_compute_attached_disk" "default" {
+#	disk = google_compute_disk.disk.self_link
+#	instance = google_compute_instance.vm_instance.self_link
+#}

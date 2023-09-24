@@ -8,7 +8,7 @@ output "name_of_vpc" {
 }
 
 output "database_user" {
-  value = google_sql_user.sql_users.name
+  value = google_sql_user.users.name
 }
 
 output "target-pool-name" {

@@ -5,5 +5,5 @@ module "load_balancer" {
   name         = var.lb_name
   service_port = 80
   target_tags  = ["allow-lb-service"]
-  network      = var.network
+  network      = google_compute_network.vpc.name
 }
