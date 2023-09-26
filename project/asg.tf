@@ -20,14 +20,12 @@ resource "google_compute_target_pool" "target_pool" {
   provider = google-beta
   region   = var.region
   name     = var.target_pool_name
-  project  = var.project_name
 }
 
 resource "google_compute_instance_group_manager" "asg_instance" {
   provider = google-beta
   zone     = var.zone
   name     = var.instance_manager
-  project  = var.project_name
   version {
     instance_template = google_compute_instance_template.instance_template.self_link
     name              = "primary"
@@ -45,7 +43,7 @@ resource "google_compute_instance_template" "instance_template" {
   name           = var.template_name
   machine_type   = var.template_machine_type
   can_ip_forward = false
-  project        = var.project_name
+  #project        = var.project_name
 
   metadata_startup_script = <<SCRIPT
       sudo setenforce 0
@@ -55,7 +53,7 @@ resource "google_compute_instance_template" "instance_template" {
       sudo systemctl start httpd
       sudo systemctl enable httpd
 
-     sudo  yum install unzip wget -y
+      sudo  yum install unzip wget -y
       sudo rm -rf /var/www/html/*
       sudo wget https://wordpress.org/latest.zip
       sudo unzip latest.zip

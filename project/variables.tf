@@ -12,7 +12,6 @@ variable "database_name" {}
 
 variable "vpc_name" {}
 
-variable "project_name" {}
 
 variable "user_password" {}
 

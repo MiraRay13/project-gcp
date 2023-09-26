@@ -5,7 +5,6 @@ resource "google_sql_database_instance" "instance" {
   region              = var.region
   database_version    = var.database_version
   deletion_protection = false
-  project             = var.project_name
   root_password       = var.db_password
 
   settings {

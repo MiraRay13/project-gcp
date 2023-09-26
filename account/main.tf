@@ -37,3 +37,24 @@ resource "null_resource" "unset-project" {
 	command = "gcloud config unset project"
 	}
 }
+
+resource "null_resource" "enable-apis" {
+  depends_on = [
+    google_project.dev-terraform,
+    null_resource.set-project
+  ]
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+
+  provisioner "local-exec" {
+    command = <<-EOT
+        gcloud services enable compute.googleapis.com
+        gcloud services enable dns.googleapis.com
+        gcloud services enable storage-api.googleapis.com
+        gcloud services enable container.googleapis.com
+        gcloud services enable file.googleapis.com
+        gcloud services enable cloudbilling.googleapis.com
+    EOT
+  }
+}

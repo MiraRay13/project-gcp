@@ -16,8 +16,6 @@ database_name = "gcp-db-london"
 
 vpc_name = "gcp-vpc-london"
 
-project_name = "dev-gcp-wrdp"
-
 user_password = "abcdefg"
 
 username = "world-london"
